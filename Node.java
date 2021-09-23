@@ -1,4 +1,4 @@
 class Node{
-  int value;
+  int value = 0;
   Node next = null;
 }
