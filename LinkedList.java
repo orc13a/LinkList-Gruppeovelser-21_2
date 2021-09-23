@@ -2,27 +2,24 @@ class LinkedList {
     Node first;
 
     public void print() {
-      boolean listEnd = false;
+        boolean listEnd = false;
         System.out.println("");
 
         Node link = first.next;
-        System.out.print(first.value + ", ");
+        System.out.print("[" + first.value + ", ");
 
-        while(listEnd == false) {
-            System.out.print(link.value + ", ");
-            try{
-              link = link.next;
-              if(link.next != null){
+        while (listEnd == false) {
+            if (link.next == null) {
+                System.out.print(link.value + "]");
                 listEnd = true;
-              }
-
-            } catch(Exception e) {
-              link.next = null;
-
+            } else {
+                System.out.print(link.value + ", ");
             }
 
+            link = link.next;
         }
 
+        System.out.println("");
         System.out.println("");
     }
 }
