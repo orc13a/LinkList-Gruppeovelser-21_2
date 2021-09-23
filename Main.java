@@ -14,6 +14,7 @@ class Main {
       //  n2.next = n3;
       //  n3.next = null;
         coolList.add(1);
+        coolList.add(2);
         coolList.print();
     }
 }

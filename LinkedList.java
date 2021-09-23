@@ -15,17 +15,15 @@ class LinkedList {
         //Et while loop, som tjekker om vi er nået ved enden af listen
         while (listEnd == false) {
             //if statement som tjekker om vi er ved den sidste node i listen
-            if (link != null && link.next == null) {
+            if (link.next == null) {
                 System.out.print(link.value + "]");
                 listEnd = true;
-            } else if (link != null) {
+            } else {
                 System.out.print(link.value + ", ");
             }
 
             //Det der gør at vi går videre i listen
-            if (link.next != null) {
-                link = link.next;
-            }
+            link = link.next;
         }
 
         System.out.println("");
@@ -38,10 +36,10 @@ class LinkedList {
 
       if(first == null){
         first = n;
-
       } else {
         boolean listEnd = false;
         Node link = first.next;
+
         while(listEnd == false){
           if(link.next == null){
             link.next = n;
