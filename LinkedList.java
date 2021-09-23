@@ -1,25 +1,31 @@
 class LinkedList {
     Node first;
 
-//Metode der printer værdierne af vores nodes i vores liste
+    //Metode der printer værdierne af vores nodes i vores liste
     public void print() {
         boolean listEnd = false;
         System.out.println("");
-//link variablen holder den næste node i listen
+
+        //link variablen holder den næste node i listen
         Node link = first.next;
-//Her printes første node værdi
+
+        //Her printes første node værdi
         System.out.print("[" + first.value + ", ");
-//Et while loop, som tjekker om vi er nået ved enden af listen
+
+        //Et while loop, som tjekker om vi er nået ved enden af listen
         while (listEnd == false) {
-//if statement som tjekker om vi er ved den sidste node i listen
-            if (link.next == null) {
+            //if statement som tjekker om vi er ved den sidste node i listen
+            if (link != null && link.next == null) {
                 System.out.print(link.value + "]");
                 listEnd = true;
-            } else {
+            } else if (link != null) {
                 System.out.print(link.value + ", ");
             }
-//Det der gør at vi går videre i listen
-            link = link.next;
+
+            //Det der gør at vi går videre i listen
+            if (link.next != null) {
+                link = link.next;
+            }
         }
 
         System.out.println("");
@@ -44,6 +50,5 @@ class LinkedList {
           }
         }
       }
-
     }
 }
