@@ -2,14 +2,25 @@ class LinkedList {
     Node first;
 
     public void print() {
+      boolean listEnd = false;
         System.out.println("");
 
         Node link = first.next;
         System.out.print(first.value + ", ");
 
-        while(link.next != null) {
+        while(listEnd == false) {
             System.out.print(link.value + ", ");
-            link = link.next;
+            try{
+              link = link.next;
+              if(link.next != null){
+                listEnd = true;
+              }
+
+            } catch(Exception e) {
+              link.next = null;
+
+            }
+
         }
 
         System.out.println("");
