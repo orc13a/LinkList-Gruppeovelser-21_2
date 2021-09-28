@@ -1,52 +1,49 @@
 class LinkedList {
+    //første node i listen
     Node first;
-
-    //Metode der printer værdierne af vores nodes i vores liste
+    //print funktion
     public void print() {
         boolean listEnd = false;
-        System.out.println("");
-
-        //link variablen holder den næste node i listen
-        Node link = first.next;
-
-        //Her printes første node værdi
-        System.out.print("[" + first.value + ", ");
-
-        //Et while loop, som tjekker om vi er nået ved enden af listen
+        Node node = first;
+        String result = "[";
+        //Det følgende sker så længe vi ikke er noget enden af listen
         while (listEnd == false) {
-            //if statement som tjekker om vi er ved den sidste node i listen
-            if (link.next == null) {
-                System.out.print(link.value + "]");
+            //checker om næsten node er sidste
+            if (node.next == null) {
+                result += (node.value + "]");
                 listEnd = true;
             } else {
-                System.out.print(link.value + ", ");
+                //ligger node værdi til string
+                result += (node.value + ", ");
             }
-
-            //Det der gør at vi går videre i listen
-            link = link.next;
+            //Går vidre til næsten node
+            node = node.next;
         }
-
-        System.out.println("");
-        System.out.println("");
+        //printer reslutat stringen ud
+        System.out.println("\n" + result + "\n");
     }
-
+    //funktion til at tilføje node til listen med en sat værdi
     public void add(int v){
       Node n = new Node();
       n.value = v;
 
-      if(first == null){
-        first = n;
+      if (first == null) {
+          first = n;
       } else {
-        boolean listEnd = false;
-        Node link = first.next;
-
-        while(listEnd == false){
-          if(link.next == null){
-            link.next = n;
-          } else {
-            link = link.next;
+          boolean listEnd = false;
+          Node node = first;
+          //Det følgende sker så længe vi ikke er noget enden af listen
+          while (listEnd == false) {
+              //checker om næste node er den sidste
+              if (node.next == null) {
+                  node.next = n;
+                  //hvis ja slutter den listen
+                  listEnd = true;
+              } else {
+                  //hvis nej så forsætter den.
+                  node = node.next;
+              }
           }
-        }
       }
     }
 }
