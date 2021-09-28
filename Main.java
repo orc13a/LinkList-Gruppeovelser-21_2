@@ -9,6 +9,7 @@ class Main {
         coolList.add(3);
         coolList.add(4);
         coolList.add(5);
+        coolList.insert(9);
         //print fuktion kaldt
         coolList.print();
     }

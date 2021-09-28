@@ -46,4 +46,23 @@ class LinkedList {
           }
       }
     }
+    //funktion til at indsætte node først i listen
+    public void insert(int v){
+      //opret ny node.
+      Node n = new Node();
+      n.value = v;
+      //sætter ny node værdi til første node værdi
+      n.next = first;
+      first = n;
+
+    }
+    //funktion til at finde sidste node.
+    public Node getLast(){
+      Node node = first;
+
+      while(node.next != null){
+          node = node.next;
+      }
+      return node;
+    }
 }
