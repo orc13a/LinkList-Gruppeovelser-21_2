@@ -10,6 +10,8 @@ class Main {
         coolList.add(4);
         coolList.add(5);
         coolList.insert(9);
+        coolList.setSpaceValue(5,7);
+        coolList.getBiggestValue();
         //print fuktion kaldt
         coolList.print();
     }

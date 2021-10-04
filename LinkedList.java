@@ -1,6 +1,7 @@
 class LinkedList {
     //første node i listen
     Node first;
+    int biggestValue = 0;
     //print funktion
     public void print() {
         boolean listEnd = false;
@@ -37,6 +38,7 @@ class LinkedList {
               //checker om næste node er den sidste
               if (node.next == null) {
                   node.next = n;
+                  saveBiggestValue(v);
                   //hvis ja slutter den listen
                   listEnd = true;
               } else {
@@ -54,7 +56,7 @@ class LinkedList {
       //sætter ny node værdi til første node værdi
       n.next = first;
       first = n;
-
+      saveBiggestValue(v);
     }
     //funktion til at finde sidste node.
     public Node getLast(){
@@ -64,5 +66,33 @@ class LinkedList {
           node = node.next;
       }
       return node;
+    }
+
+    //Metode til at vælge en plads og ændre dens værdi
+    public void setSpaceValue(int k, int value){
+      Node node = first;
+      int index = 0;
+        while(node != null){
+          if(index == k){
+            node.value = value;
+            saveBiggestValue(value);
+            break;
+          } else {
+            index ++;
+            node = node.next;
+          }
+
+        }
+    }
+    public void saveBiggestValue(int value){
+
+      if(biggestValue < value){
+        biggestValue = value;
+
+      }
+    }
+    public void getBiggestValue(){
+      System.out.println(biggestValue);
+
     }
 }
