@@ -2,6 +2,7 @@ class LinkedList {
     //første node i listen
     Node first;
     int biggestValue = 0;
+    int smallestValue = 2147483647;
     //print funktion
     public void print() {
         boolean listEnd = false;
@@ -30,6 +31,7 @@ class LinkedList {
 
       if (first == null) {
           first = n;
+          saveSmallestValue(v);
       } else {
           boolean listEnd = false;
           Node node = first;
@@ -39,6 +41,7 @@ class LinkedList {
               if (node.next == null) {
                   node.next = n;
                   saveBiggestValue(v);
+                  saveSmallestValue(v);
                   //hvis ja slutter den listen
                   listEnd = true;
               } else {
@@ -57,7 +60,9 @@ class LinkedList {
       n.next = first;
       first = n;
       saveBiggestValue(v);
+      saveSmallestValue(v);
     }
+
     //funktion til at finde sidste node.
     public Node getLast(){
       Node node = first;
@@ -76,6 +81,7 @@ class LinkedList {
           if(index == k){
             node.value = value;
             saveBiggestValue(value);
+            saveSmallestValue(value);
             break;
           } else {
             index ++;
@@ -92,7 +98,20 @@ class LinkedList {
       }
     }
     public void getBiggestValue(){
-      System.out.println(biggestValue);
+      System.out.println("\nBiggest value: " + biggestValue);
 
+    }
+
+    public void saveSmallestValue(int value){
+      //smallestValue = biggestValue;
+      if(smallestValue > value){
+
+        smallestValue = value;
+      }
+
+    }
+
+    public void getSmallestValue(){
+      System.out.println("Smallest value: " + smallestValue);
     }
 }

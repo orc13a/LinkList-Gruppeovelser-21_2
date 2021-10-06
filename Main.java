@@ -12,6 +12,7 @@ class Main {
         coolList.insert(9);
         coolList.setSpaceValue(5,7);
         coolList.getBiggestValue();
+        coolList.getSmallestValue();
         //print fuktion kaldt
         coolList.print();
     }
