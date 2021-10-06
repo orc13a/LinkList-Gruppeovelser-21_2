@@ -2,7 +2,7 @@ class LinkedList {
     //første node i listen
     Node first;
     int biggestValue = 0;
-    int smallestValue = 2147483647;
+    int smallestValue = Integer.MAX_VALUE;
     //print funktion
     public void print() {
         boolean listEnd = false;
@@ -103,7 +103,6 @@ class LinkedList {
     }
 
     public void saveSmallestValue(int value){
-      //smallestValue = biggestValue;
       if(smallestValue > value){
 
         smallestValue = value;

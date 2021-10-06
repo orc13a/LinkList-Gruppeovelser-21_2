@@ -9,7 +9,9 @@ class Main {
         coolList.add(3);
         coolList.add(4);
         coolList.add(5);
+        coolList.insert(800);
         coolList.insert(9);
+        coolList.setSpaceValue(6,7000);
         coolList.setSpaceValue(5,7);
         coolList.getBiggestValue();
         coolList.getSmallestValue();
