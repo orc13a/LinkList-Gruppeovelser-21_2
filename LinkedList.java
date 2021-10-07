@@ -1,10 +1,10 @@
 class LinkedList {
-    // første node i listen
+    // Første node i listen
     Node first;
     int biggestValue = 0;
     int smallestValue = Integer.MAX_VALUE;
 
-    // print funktion
+    // Print funktion
     public void print() {
         boolean listEnd = false;
         Node node = first;

@@ -1,13 +1,17 @@
+// #######################
+// # Gustav og Oliver C  #
+// #######################
+
 class Main {
     public static void main(String[] args) {
-        // opretter linklist objekt
+        // Opretter objekter
         LinkedList coolList = new LinkedList();
         Queue coolQueue = new Queue();
         Stack coolStack = new Stack();
 
         System.out.println("\n#### Linked list ####");
 
-        // tilføjer nodes til listen
+        // Tilføjer nodes til listen
         coolList.add(1);
         coolList.add(2);
         coolList.add(3);
@@ -17,10 +21,12 @@ class Main {
         coolList.insert(9);
         coolList.setSpaceValue(6, 7000);
         coolList.setSpaceValue(5, 7);
+
+        // Skriver største og mindste værdier
         coolList.getBiggestValue();
         coolList.getSmallestValue();
 
-        // print fuktion kaldt
+        // Print fuktion kaldt
         coolList.print();
 
         // Queue
@@ -41,12 +47,13 @@ class Main {
         coolQueue.add(11);
         coolQueue.add(12);
 
-        // printe.r køen ud
+        // Printer køen ud
         coolQueue.print();
 
         // Stack
         System.out.println("#### Stack ####\n");
 
+        // Tilføj til stacken
         coolStack.add(1);
         coolStack.add(2);
         coolStack.add(3);
@@ -57,10 +64,11 @@ class Main {
         coolStack.add(8);
         coolStack.add(9);
         coolStack.add(10);
-        coolStack.remove();
+        coolStack.remove(); // Fjern fra køen
         coolStack.add(11);
         coolStack.add(12);
 
+        // Printer stacken ud
         coolStack.print();
     }
 }
