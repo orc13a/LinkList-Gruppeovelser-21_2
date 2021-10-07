@@ -3,6 +3,7 @@ class Main {
         // opretter linklist objekt
         LinkedList coolList = new LinkedList();
         Queue coolQueue = new Queue();
+        Stack coolStack = new Stack();
 
         System.out.println("\n#### Linked list ####");
 
@@ -42,5 +43,24 @@ class Main {
 
         // printe.r køen ud
         coolQueue.print();
+
+        // Stack
+        System.out.println("#### Stack ####\n");
+
+        coolStack.add(1);
+        coolStack.add(2);
+        coolStack.add(3);
+        coolStack.add(4);
+        coolStack.add(5);
+        coolStack.add(6);
+        coolStack.add(7);
+        coolStack.add(8);
+        coolStack.add(9);
+        coolStack.add(10);
+        coolStack.remove();
+        coolStack.add(11);
+        coolStack.add(12);
+
+        coolStack.print();
     }
 }
