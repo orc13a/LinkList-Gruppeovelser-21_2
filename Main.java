@@ -36,12 +36,9 @@ class Main {
         coolQueue.add(8);
         coolQueue.add(9);
         coolQueue.add(10);
-        coolQueue.remove();
+        coolQueue.remove(); // Tager den "forerste" i køen ud af køen
         coolQueue.add(11);
         coolQueue.add(12);
-
-        // Tager den "forerste" i køen ud af køen
-        // coolQueue.remove();
 
         // printe.r køen ud
         coolQueue.print();
