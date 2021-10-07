@@ -1,9 +1,9 @@
 class Main {
     public static void main(String[] args) {
-        //opretter linklist objekt
+        // opretter linklist objekt
         LinkedList coolList = new LinkedList();
 
-        //tilføjer nodes til listen
+        // tilføjer nodes til listen
         coolList.add(1);
         coolList.add(2);
         coolList.add(3);
@@ -11,11 +11,12 @@ class Main {
         coolList.add(5);
         coolList.insert(800);
         coolList.insert(9);
-        coolList.setSpaceValue(6,7000);
-        coolList.setSpaceValue(5,7);
+        coolList.setSpaceValue(6, 7000);
+        coolList.setSpaceValue(5, 7);
         coolList.getBiggestValue();
         coolList.getSmallestValue();
-        //print fuktion kaldt
+
+        // print fuktion kaldt
         coolList.print();
     }
 }

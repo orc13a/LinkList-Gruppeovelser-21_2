@@ -1,6 +1,4 @@
-class Node{
-  //giver node værdi
-  int value = 0;
-  //link mellem nodes
-  Node next = null;
+class Node {
+    int value = 0; // giver node værdi
+    Node next = null; // link mellem nodes
 }
