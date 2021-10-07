@@ -1,36 +1,47 @@
 public class Queue {
-    //opstilles de globle variabler
+    // opstilles de globle variabler
     // arrayDefLen bestemmer vores arrays max længde.
     int arrayDefLen = 10;
     int[] array = new int[arrayDefLen];
     int arrayLength = 0;
+    boolean removed = false;
 
-    //Metode der tjekker om arrayen er fuld.
-    public boolean isFull() {
+    // Metode der tjekker om arrayen er fuld.
+    private boolean isFull() {
         if (arrayLength == arrayDefLen) {
-            System.out.println("\n==> The array is full\n");
+            System.out.println("==> The array is full");
             return true;
         } else {
             return false;
         }
     }
-    //metode til at tilføje et nummer til køen, hvis arrayen ikke er fuld
+
+    // metode til at tilføje et nummer til køen, hvis arrayen ikke er fuld
     public void add(int v) {
         if (!isFull()) {
-            pushQueue(v);
+            if (removed) {
+                array[0] = v;
+            } else {
+                pushQueue(v);
+            }
+        }
+        removed = false;
+    }
+
+    // Metode
+    public void remove() {
+        removed = true;
+        if (isFull()) {
+            arrayLength--;
+            pushQueue(0);
+            arrayLength--;
+        } else {
+            array[arrayLength - 1] = 0;
+            arrayLength--;
         }
     }
-    //Metode
-    public void remove() {
-        //tager den sidste plads i arrayen og sætter værdien til nul
-        array[arrayLength - 1] = 0;
-        arrayLength --;
-        pushQueue(0);
-        arrayLength --;
 
-    }
-
-    public void pushQueue(int v) {
+    private void pushQueue(int v) {
         for (int i = arrayLength; i > -1; i--) {
             if (i == arrayDefLen - 1) {
                 array[i] = array[i - 1];
@@ -43,16 +54,16 @@ public class Queue {
     }
 
     public void print() {
-        String result = "[";
+        String result = "\n[";
 
         for (int i = 0; i < array.length; i++) {
             if (i == array.length - 1) {
-                result += array[i] + "]";
+                result += array[i] + "]\n";
             } else {
                 result += array[i] + ", ";
             }
         }
-
+        
         System.out.println(result);
     }
 }
