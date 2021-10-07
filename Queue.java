@@ -16,7 +16,7 @@ public class Queue {
         }
     }
 
-    // metode til at tilføje et nummer til køen, hvis arrayen ikke er fuld
+    // Metode til at tilføje et nummer til køen, hvis arrayen ikke er fuld
     public void add(int v) {
         if (!isFull()) {
             if (removed) {
@@ -28,7 +28,7 @@ public class Queue {
         removed = false;
     }
 
-    // Metode
+    // Metode der fjerner fra køen
     public void remove() {
         removed = true;
         if (isFull()) {
@@ -41,18 +41,23 @@ public class Queue {
         }
     }
 
+    // Rykker køen mod højre
     private void pushQueue(int v) {
+        // Vi starter bagfra i køen
         for (int i = arrayLength; i > -1; i--) {
+            // Hvis vi er ved slutningen af køen
             if (i == arrayDefLen - 1) {
                 array[i] = array[i - 1];
             } else {
                 array[i + 1] = array[i];
             }
         }
+        
         array[0] = v;
         arrayLength++;
     }
 
+    // Skriver køen ud
     public void print() {
         String result = "\n[";
 
