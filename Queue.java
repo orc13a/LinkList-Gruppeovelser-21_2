@@ -1,15 +1,24 @@
 public class Queue {
-    // opstilles de globle variabler
-    // arrayDefLen bestemmer vores arrays max længde.
-    int arrayDefLen = 10;
+    // Opstilles de globle variabler
+    // ArrayDefLen bestemmer vores arrays max længde.
+    private int arrayDefLen = 10;
     int[] array = new int[arrayDefLen];
     int arrayLength = 0;
-    boolean removed = false;
+    private boolean removed = false;
 
     // Metode der tjekker om arrayen er fuld.
     private boolean isFull() {
         if (arrayLength == arrayDefLen) {
-            System.out.println("==> The array is full");
+            System.out.println("==> The queue is full");
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private boolean isFullRemove() {
+        if (arrayLength == arrayDefLen) {
+            // System.out.println("==> The array is full");
             return true;
         } else {
             return false;
@@ -26,15 +35,15 @@ public class Queue {
             }
         }
         removed = false;
+        arrayLength++;
     }
 
     // Metode der fjerner fra køen
     public void remove() {
         removed = true;
-        if (isFull()) {
+        if (isFullRemove()) {
             arrayLength--;
             pushQueue(0);
-            arrayLength--;
         } else {
             array[arrayLength - 1] = 0;
             arrayLength--;
@@ -52,9 +61,8 @@ public class Queue {
                 array[i + 1] = array[i];
             }
         }
-        
+
         array[0] = v;
-        arrayLength++;
     }
 
     // Skriver køen ud
@@ -68,7 +76,7 @@ public class Queue {
                 result += array[i] + ", ";
             }
         }
-        
+        // System.out.println(arrayLength);
         System.out.println(result);
     }
 }

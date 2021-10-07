@@ -23,23 +23,22 @@ class Main {
         coolList.print();
 
         // Queue
-        System.out.println("\n#### Queue ####\n");
-        
+        System.out.println("#### Queue ####\n");
+
         // Tilføje numre til køen
         coolQueue.add(1);
         coolQueue.add(2);
         coolQueue.add(3);
-        // coolQueue.add(4);
-        // coolQueue.add(5);
-        // coolQueue.add(6);
-        // coolQueue.add(7);
-        // coolQueue.add(8);
-        // coolQueue.add(9);
+        coolQueue.add(4);
+        coolQueue.add(5);
+        coolQueue.add(6);
+        coolQueue.add(7);
+        coolQueue.add(8);
+        coolQueue.add(9);
         coolQueue.add(10);
         coolQueue.remove();
         coolQueue.add(11);
         coolQueue.add(12);
-        coolQueue.add(13);
 
         // Tager den "forerste" i køen ud af køen
         // coolQueue.remove();
