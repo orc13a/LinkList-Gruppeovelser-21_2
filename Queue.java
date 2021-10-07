@@ -1,8 +1,11 @@
 public class Queue {
+    //opstilles de globle variabler
+    // arrayDefLen bestemmer vores arrays max længde.
     int arrayDefLen = 10;
     int[] array = new int[arrayDefLen];
     int arrayLength = 0;
 
+    //Metode der tjekker om arrayen er fuld.
     public boolean isFull() {
         if (arrayLength == arrayDefLen) {
             System.out.println("\n==> The array is full\n");
@@ -11,17 +14,20 @@ public class Queue {
             return false;
         }
     }
-
+    //metode til at tilføje et nummer til køen, hvis arrayen ikke er fuld
     public void add(int v) {
         if (!isFull()) {
             pushQueue(v);
         }
     }
-
+    //Metode
     public void remove() {
+        //tager den sidste plads i arrayen og sætter værdien til nul
         array[arrayLength - 1] = 0;
-        arrayLength--;
+        arrayLength --;
         pushQueue(0);
+        arrayLength --;
+
     }
 
     public void pushQueue(int v) {

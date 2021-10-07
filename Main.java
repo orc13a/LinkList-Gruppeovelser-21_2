@@ -24,7 +24,7 @@ class Main {
 
         // Queue
         System.out.println("\n#### Queue ####\n");
-
+        // Tilføje numre til køen
         coolQueue.add(1);
         coolQueue.add(2);
         coolQueue.add(3);
@@ -35,10 +35,11 @@ class Main {
         coolQueue.add(8);
         coolQueue.add(9);
         coolQueue.add(10);
-        //coolQueue.add(11);
-
         coolQueue.remove();
-
+        coolQueue.add(11);
+        //Tager den "forerste" i køen ud af køen
+        //coolQueue.remove();
+        //printe.r køen ud
         coolQueue.print();
     }
 }
